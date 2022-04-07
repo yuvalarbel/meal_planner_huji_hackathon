@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace my_user_control
+namespace HackathonFrontWPF
 {
     /// <summary>
-    /// Interaction logic for Recipes_control.xaml
+    /// Interaction logic for temp.xaml
     /// </summary>
-    public partial class Recipes_control : UserControl
+    public partial class temp : UserControl
     {
-        public Recipes_control()
+        public temp()
         {
             InitializeComponent();
         }

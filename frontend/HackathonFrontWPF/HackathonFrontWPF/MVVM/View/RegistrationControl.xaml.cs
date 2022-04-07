@@ -12,21 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using HackathonFrontWPF.MVVM.Model;
 
-namespace HackathonFrontWPF.MVVM.View
+namespace Hack
 {
     /// <summary>
-    /// Interaction logic for IngredientControl.xaml
+    /// Interaction logic for RegistrationControl.xaml
     /// </summary>
-    public partial class IngredientControl : UserControl
+    public partial class RegistrationControl : UserControl
     {
-        public Ingredient ingredient { get; set; }
-        public IngredientControl(Ingredient ing)
+        public RegistrationControl()
         {
             InitializeComponent();
-            txtName.Text = ing.Name;
-            ingredient= ing;
         }
     }
 }
