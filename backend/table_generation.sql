@@ -21,12 +21,15 @@ CREATE TABLE recipes (
   id INTEGER PRIMARY KEY,
   title TEXT NOT NULL,
   link TEXT NOT NULL,
-  image_path
+  ingredients_text TEXT NOT NULL,
+  directions_text TEXT NOT NULL,
+  image_path TEXT
 );
 
 CREATE TABLE ingredients (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL,
+  price REAL NOT NULL,
   contains_meat INTEGER DEFAULT 0,
   contains_nuts INTEGER DEFAULT 0,
   contains_dairy INTEGER DEFAULT 0,
@@ -38,15 +41,6 @@ CREATE TABLE ingredients (
 CREATE TABLE recipe_ingredients (
   recipe_id INTEGER NOT NULL,
   ingredient_id INTEGER NOT NULL,
-  amount TEXT NOT NULL,
-  unit TEXT NOT NULL,
   FOREIGN KEY (recipe_id) REFERENCES recipes(id),
   FOREIGN KEY (ingredient_id) REFERENCES ingredients(id)
-);
-
-CREATE TABLE recipe_directions (
-  recipe_id INTEGER NOT NULL,
-  step_number INTEGER NOT NULL,
-  step TEXT NOT NULL,
-  FOREIGN KEY (recipe_id) REFERENCES recipes(id)
 );
