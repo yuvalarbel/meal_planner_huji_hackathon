@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from transformers import FlaxAutoModelForSeq2SeqLM
 from transformers import AutoTokenizer
 import recipe_generator as ai_recipes
+import utils
 
 MODEL_NAME_OR_PATH = "flax-community/t5-recipe-generation"
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME_OR_PATH, use_fast=True)
@@ -24,13 +25,8 @@ def generate_recipe_list():
     # ai_recipe = ai_recipes.generate_ai_recipe(model,tokenizer, ingridients)
     return jsonify("recipe list generated")
 
-
-def analyze_user_info(user_info):
-    return {'username', 'password', 'email', 'kosher', 'no_meat', 'no_nuts', 'no_dairy', 'no_eggs', 'no_soy', 'no_gluten'}
-
-
 def db_register_user(user_info):
-    user_options = analyze_user_info(user_info)
+    user_options = utils.analyze_user_info(user_info)
     add_user_to_db(user_options)
     return user_options
 
