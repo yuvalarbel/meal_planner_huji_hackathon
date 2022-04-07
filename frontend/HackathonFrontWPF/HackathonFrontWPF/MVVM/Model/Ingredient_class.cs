@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace my_user_control
+namespace HackathonFrontWPF
 {
-    internal class Ingredient_class
+    public class Ingredient_class
     {
         public string? Name { get; set; }
         public string? Image_path { get; set; }

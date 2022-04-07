@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HackathonFrontWPF.MVVM.View
+namespace Hack
 {
     /// <summary>
-    /// Interaction logic for IngredientControl.xaml
+    /// Interaction logic for RegistrationControl.xaml
     /// </summary>
-    public partial class IngredientControl : UserControl
+    public partial class RegistrationControl : UserControl
     {
-        public IngredientControl()
+        public RegistrationControl()
         {
             InitializeComponent();
         }

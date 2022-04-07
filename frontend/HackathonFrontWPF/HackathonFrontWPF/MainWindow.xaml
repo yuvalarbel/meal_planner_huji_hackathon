@@ -15,7 +15,7 @@
     <Border Background="DimGray"
         CornerRadius="50">
 
-        <Grid>
+        <Grid Name="mainGrid">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
