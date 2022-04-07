@@ -17,7 +17,8 @@ with open('recipes_df.pickle', 'rb') as f:
 recipes['ingredients_text'] = recipes.ingredients.str.slice(2, -2).str.replace('", "', '\n')
 recipes['directions_text'] = recipes.directions.str.slice(2, -2).str.replace('", "', '\n')
 
-recipes_table_data = recipes[['id', 'title', 'link', 'ingredients_text', 'directions_text']]
+recipes_table_data = recipes[['id', 'title', 'link', 'ingredients_text', 'directions_text']].copy()
+# recipes_table_data.loc[recipes_table_data.id == 9390, 'title'] = 'I CanT Cook Chicken'
 # recipes_table_data.to_sql('recipes', con=conn, if_exists='append', index=False)
 
 ingredients_table_data = recipes[['id', 'NER']]
