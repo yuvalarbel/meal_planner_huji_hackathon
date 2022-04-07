@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="my_user_control.Recipe"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:my_user_control"
+             mc:Ignorable="d" 
+             d:DesignHeight="153" d:DesignWidth="500"
+             Background="White">
+    <Grid RenderTransformOrigin="0.631,0.499">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        
+        <Rectangle  Margin="10,62,0,62" x:Name="TimeImg" Height="30" Width="30" Grid.Column="0" HorizontalAlignment="Left" >
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="C:\Users\omerl\OneDrive\Documents\GitHub\meal_planner_huji_hackathon\frontend\HackathonFrontWPF\HackathonFrontWPF\MVVM\View\alarm-clock.png" />
+            </Rectangle.Fill>
+        </Rectangle>
+        
+        
+        <Rectangle  x:Name="MoneyImg" Width="30" Height="30" Margin="40,25,0,20" Grid.Column="0" >
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="C:\Users\omerl\OneDrive\Documents\GitHub\meal_planner_huji_hackathon\frontend\HackathonFrontWPF\HackathonFrontWPF\MVVM\View\israel-shekel-currency-symbol.png" />
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle  Margin="0" x:Name="RecipesImg" Height="100" Width="100" Grid.Column="2" HorizontalAlignment="Center" >
+            <Rectangle.Fill>
+                <ImageBrush x:Name="ImageBrushRecipe" ImageSource="C:\Users\omerl\OneDrive\Documents\GitHub\meal_planner_huji_hackathon\frontend\HackathonFrontWPF\HackathonFrontWPF\MVVM\View\pizza_img.jpg" />
+            </Rectangle.Fill>
+        </Rectangle>
+
+
+        <TextBlock Name="txtTimeOfRecipe" 
+                   Text="Time" 
+                   Grid.Column="0" 
+                   FontWeight="Bold" 
+                   Margin="50,70,0,64" 
+                   HorizontalAlignment="Left" 
+                   Width="30" />
+        <TextBlock Name="txtCostOfRecipe" 
+                   Text="Cost"
+                   Grid.Column="0"
+                   FontWeight="Bold" 
+                   Margin="123,0,0,0" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Left"/>
+        
+        <TextBlock Name="txtRecipeName"
+                   Text="MyName" 
+                   Grid.Column="1" 
+                   FontWeight="Bold"
+                   FontSize="30"
+                   Margin="2" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Center"/>
+        <TextBlock 
+            x:Name="txtRecipeDescriptor"
+            Text="decription of product" 
+            Grid.Column="1"  
+            Margin="0,0,0,10"  
+            VerticalAlignment="Bottom"/>
+        
+        
+    </Grid>
+</UserControl>

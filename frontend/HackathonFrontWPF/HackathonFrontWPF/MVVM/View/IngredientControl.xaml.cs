@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp2
+namespace HackathonFrontWPF
 {
     /// <summary>
     /// Interaction logic for IngredientControl.xaml
     /// </summary>
     public partial class IngredientControl : UserControl
     {
-        public IngredientControl()
+       public IngredientControl()
         {
             InitializeComponent();
         }
