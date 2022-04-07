@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HackathonFrontWPF.MVVM.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp2;
 
 namespace Hack
 {
@@ -25,8 +27,20 @@ namespace Hack
             InitializeComponent();
             this.PreviewKeyDown += new KeyEventHandler(HandleEsc);
             RegistrationControl regControl = new RegistrationControl();
-            mainGrid.Children.Add(regControl);
-            Grid.SetRow(regControl, 1);
+            //mainGrid.Children.Add(regControl);
+            //Grid.SetRow(regControl, 1);
+            
+            // -------- MOCKUP INGREDIENT LIST ---------
+            List<Ingredient> ingLst = new List<Ingredient>();
+            ingLst.Add(new Ingredient("aaa", "url", 200, 2));
+            ingLst.Add(new Ingredient("bbb", "url", 200, 2));
+            ingLst.Add(new Ingredient("ccc", "url", 200, 2));
+            ingLst.Add(new Ingredient("aaa", "url", 200, 2));
+            // -------- MOCKUP INGREDIENT LIST ---------
+
+            SwipeControl swipeControl = new SwipeControl(ingLst);
+            mainGrid.Children.Add(swipeControl);
+            Grid.SetRow(swipeControl, 1);
         }
 
 
