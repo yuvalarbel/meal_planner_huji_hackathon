@@ -7,9 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="690" d:DesignWidth="500">
     <Grid>
-        <StackPanel x:Name="Recipes_stack"
-            
-            
+        <StackPanel x:Name="Recipes_stack">
+
+
         </StackPanel>
 
     </Grid>

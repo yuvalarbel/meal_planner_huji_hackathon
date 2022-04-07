@@ -18,16 +18,15 @@ namespace my_user_control
     /// <summary>
     /// Interaction logic for Recipe.xaml
     /// </summary>
-    public partial class Recipe : UserControl
-    {
-        public RecipeClass recipe { get; set; }
-        public Recipe(RecipeClass rec)
-        {
-            InitializeComponent();
-            recipe = rec;
+    //public partial class Recipe : UserControl
+    //{
+    //    public RecipeClass recipe { get; set; }
+    //    public Recipe(RecipeClass rec)
+    //    {
+    //        InitializeComponent();
+    //        recipe = rec;
 
-            //Adjust for current recipe
-            btn1.Content
-        }
-    }
+    //        //Adjust for current recipe
+    //    }
+    //}
 }
