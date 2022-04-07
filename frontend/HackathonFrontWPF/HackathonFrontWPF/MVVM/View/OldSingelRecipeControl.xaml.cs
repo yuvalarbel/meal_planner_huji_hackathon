@@ -24,13 +24,13 @@ namespace HackathonFrontWPF
         public RecipeClass RecipeObject { get; set; }
         public Recipe(RecipeClass recipe)
         {
-            InitializeComponent();
-            // set the class property
-            RecipeObject = recipe;
+            //InitializeComponent();
+            //// set the class property
+            //RecipeObject = recipe;
 
-            // fill in the txtCostOfRecipe text in the textblock with the cost of the recipe
-            txtCostOfRecipe.Text = RecipeObject.CostOfRecipe.ToString();
-            txtTimeOfRecipe.Text = RecipeObject.TimeOfRecipe.ToString();
+            //// fill in the txtCostOfRecipe text in the textblock with the cost of the recipe
+            //txtCostOfRecipe.Text = RecipeObject.CostOfRecipe.ToString();
+            //txtTimeOfRecipe.Text = RecipeObject.TimeOfRecipe.ToString();
 
         }
     }
