@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HackathonFrontWPF
+namespace Hack
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +23,21 @@ namespace HackathonFrontWPF
         public MainWindow()
         {
             InitializeComponent();
+
+            this.PreviewKeyDown += new KeyEventHandler(HandleEsc);
+        }
+
+
+        private void HandleEsc(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+                Close();
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
         }
     }
 }
