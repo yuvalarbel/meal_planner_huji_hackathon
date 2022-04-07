@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HackathonFrontWPF
+namespace HackathonFrontWPF.MVVM.View
 {
     /// <summary>
     /// Interaction logic for IngredientControl.xaml
     /// </summary>
     public partial class IngredientControl : UserControl
     {
-       public IngredientControl()
+        public IngredientControl()
         {
             InitializeComponent();
-        }
-
-        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
         }
     }
 }
