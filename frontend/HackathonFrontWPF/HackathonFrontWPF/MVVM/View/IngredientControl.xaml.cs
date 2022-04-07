@@ -24,5 +24,10 @@ namespace WpfApp2
         {
             InitializeComponent();
         }
+
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

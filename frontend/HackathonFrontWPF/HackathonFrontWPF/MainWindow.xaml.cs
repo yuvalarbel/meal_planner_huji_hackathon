@@ -23,8 +23,10 @@ namespace Hack
         public MainWindow()
         {
             InitializeComponent();
-
             this.PreviewKeyDown += new KeyEventHandler(HandleEsc);
+            RegistrationControl regControl = new RegistrationControl();
+            mainGrid.Children.Add(regControl);
+            Grid.SetRow(regControl, 1);
         }
 
 
