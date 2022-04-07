@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HackathonFrontWPF.MVVM.Model;
 
 namespace HackathonFrontWPF.MVVM.View
 {
@@ -20,9 +21,12 @@ namespace HackathonFrontWPF.MVVM.View
     /// </summary>
     public partial class IngredientControl : UserControl
     {
-        public IngredientControl()
+        public Ingredient ingredient { get; set; }
+        public IngredientControl(Ingredient ing)
         {
             InitializeComponent();
+            txtName.Text = ing.Name;
+            ingredient= ing;
         }
     }
 }

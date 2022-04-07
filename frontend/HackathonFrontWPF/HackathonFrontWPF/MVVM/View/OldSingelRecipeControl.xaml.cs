@@ -21,8 +21,8 @@ namespace HackathonFrontWPF
     public partial class Recipe : UserControl
     {
         // add a class property for the RecipeClass object
-        public RecipeClass RecipeObject { get; set; }
-        public Recipe(RecipeClass recipe)
+        public Recipe RecipeObject { get; set; }
+        public Recipe(Recipe recipe)
         {
             //InitializeComponent();
             //// set the class property
