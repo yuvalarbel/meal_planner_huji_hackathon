@@ -30,7 +30,7 @@
 
         <Rectangle  Margin="0" x:Name="RecipesImg" Height="100" Width="100" Grid.Column="2" HorizontalAlignment="Center" >
             <Rectangle.Fill>
-                <ImageBrush ImageSource="C:\Users\omerl\OneDrive\Documents\GitHub\meal_planner_huji_hackathon\frontend\HackathonFrontWPF\HackathonFrontWPF\MVVM\View\pizza_img.jpg" />
+                <ImageBrush x:Name="ImageBrushRecipe" ImageSource="C:\Users\omerl\OneDrive\Documents\GitHub\meal_planner_huji_hackathon\frontend\HackathonFrontWPF\HackathonFrontWPF\MVVM\View\pizza_img.jpg" />
             </Rectangle.Fill>
         </Rectangle>
 
@@ -63,8 +63,7 @@
             Text="decription of product" 
             Grid.Column="1"  
             Margin="0,0,0,10"  
-            VerticalAlignment="Bottom"
-            />
+            VerticalAlignment="Bottom"/>
         
         
     </Grid>

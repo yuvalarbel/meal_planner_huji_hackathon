@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace my_user_control
+namespace HackathonFrontWPF
 {
-    internal class RecipeClass
+    public class RecipeClass
     {
         public int Time { get; set; }
         public string? Name { get; set; }
