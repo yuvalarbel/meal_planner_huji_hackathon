@@ -33,9 +33,3 @@ for _, (i, raw_ingredients) in ingredients_table_data.iterrows():
 
 conn.commit()
 conn.close()
-
-# for i, (_, title, ingredients, directions, link, _, raw_ingredients) in data.iterrows():
-#     ingredients = json.loads(ingredients)
-#     directions = json.loads(directions)
-#     raw_ingredients = json.loads(raw_ingredients)
-
