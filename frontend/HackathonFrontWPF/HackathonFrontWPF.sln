@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackathonFrontWPF", "HackathonFrontWPF\HackathonFrontWPF.csproj", "{E6F86891-E0C7-4733-A5AC-847D173DBC31}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackathonFrontWPF", "HackathonFrontWPF\HackathonFrontWPF.csproj", "{71519E69-8244-4BED-8EA1-9A19C5FD5456}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E6F86891-E0C7-4733-A5AC-847D173DBC31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6F86891-E0C7-4733-A5AC-847D173DBC31}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6F86891-E0C7-4733-A5AC-847D173DBC31}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6F86891-E0C7-4733-A5AC-847D173DBC31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71519E69-8244-4BED-8EA1-9A19C5FD5456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71519E69-8244-4BED-8EA1-9A19C5FD5456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71519E69-8244-4BED-8EA1-9A19C5FD5456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71519E69-8244-4BED-8EA1-9A19C5FD5456}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5783A366-9237-4966-8929-CE1A3C081B01}
+		SolutionGuid = {5A5876E8-795B-4C8E-9DC0-C98902DC349B}
 	EndGlobalSection
 EndGlobal
