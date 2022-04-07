@@ -5,21 +5,11 @@ import pandas as pd
 import json
 import sqlite3
 
-# print current directory with absolute path
-import os
-print(os.path.abspath(os.curdir))
-# flush the buffer
-import sys
-sys.stdout.flush()
-
 conn = sqlite3.connect('../data.db')
 
-# data = pd.read_csv("../../../recipes.csv")
-# data.rename({'Unnamed: 0': 'id'}, axis=1, inplace=True)
-
 raw_ingredients = pd.read_excel("raw_ingredients.xlsx")
-# raw_ingredients.to_sql('ingredients', conn, if_exists='append', index=False)
-ing_ids = dict(zip(raw_ingredients.name, raw_ingredients.index))
+raw_ingredients.to_sql('ingredients', conn, if_exists='append', index=False)
+ing_ids = dict(zip(raw_ingredients.name, raw_ingredients.id))
 
 with open('recipes_df.pickle', 'rb') as f:
     recipes = pd.read_pickle(f)
@@ -36,11 +26,9 @@ for _, (i, raw_ingredients) in ingredients_table_data.iterrows():
     raw_ingredients = json.loads(raw_ingredients)
     for ing in raw_ingredients:
         if ing in ing_ids:
-            # print(f"yes: {i} {ing}")
+            pass
             conn.execute(f"INSERT INTO recipe_ingredients (recipe_id, ingredient_id) "
                          f"VALUES ({i}, {ing_ids[ing]})")
-        # else:
-        #     print(f"no: {i} {ing}")
 
 conn.commit()
 conn.close()
