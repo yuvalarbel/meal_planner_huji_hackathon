@@ -13,10 +13,9 @@ INGREDIENTS_TAGS = {'no_meat': 'contains_meat',
                     'no_soy': 'contains_soy',
                     'no_gluten': 'contains_gluten'}
 PRICE_TRESHOLD = 50
-RECIPE_NAMES = ['title', 'ingredients', 'directions', 'price', 'missing_ingredients']
+RECIPE_NAMES = ['name', 'time', 'ingredients', 'directions', 'price', 'missing_ingredients']
 
 conn = sqlite3.connect('data.db', check_same_thread=False)
-
 
 
 def add_user_to_db(user_options):
@@ -104,4 +103,6 @@ def get_recipes():
     return_list = [dict(zip(RECIPE_NAMES, line)) for line in cur.fetchall()]
     for recipe in return_list:
         recipe['is_ai'] = False
+        recipe['is_free'] = False
+        recipe['image_path'] = ""
     return return_list

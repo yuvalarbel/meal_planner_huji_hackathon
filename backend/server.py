@@ -25,7 +25,7 @@ def register_user():
     updated_user_options = dbt.add_user_to_db(user_options)
     return_data = dbt.get_ingredients(updated_user_options)
 
-    print("Returning: ", return_data)
+    print("Returning all ingredients ordered by importance: ", return_data)
 
     return jsonify(return_data)
 
@@ -43,7 +43,10 @@ def add_ingredient():
         'current_min_price': min_price
     }
 
-    print("Returning: ", return_data)
+    print("Returning: ")
+    print("Number of free recipes: ", free_count)
+    print("Number of paid recipes: ", paid_count)
+    print("Current minimum price for a paid recipe: ", min_price, "NIS")
 
     return jsonify(return_data)
 
@@ -54,6 +57,11 @@ def generate_recipes():
     ingredients = dbt.get_cur_ingredients()
     ai_recipe = ai_recipes.generate_ai_recipe(model, tokenizer, ", ".join(ingredients))
     ai_recipe['is_ai'] = True
+    ai_recipe['is_free'] = True
+    ai_recipe['image_path'] = ""
+    ai_recipe['time'] = 30
+    ai_recipe['price'] = 0
+    ai_recipe['missing_ingredients'] = []
     queried_recipes = dbt.get_recipes()
     return_data = [ai_recipe] + queried_recipes
     return jsonify(return_data)
