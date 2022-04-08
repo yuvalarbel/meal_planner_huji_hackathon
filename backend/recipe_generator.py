@@ -60,5 +60,5 @@ def generate_ai_recipe(model, tokenizer, items):
             elif section.startswith("ingredients:"):
                 recipe["ingredients"] = section.replace("ingredients: ", "")
             elif section.startswith("directions:"):
-                recipe["directions"] = section.replace("directions: ", "")
+                recipe["directions"] = section.replace("directions: ", "").replace('--', '\n')
         return recipe

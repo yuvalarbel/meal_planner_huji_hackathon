@@ -66,3 +66,8 @@ SELECT *
  INNER JOIN user_settings us on u.id = us.user_id
  WHERE id = (SELECT MAX(id) FROM users);
 """
+
+CUR_INGREDIENTS_QUERY = """
+SELECT name
+  FROM cur_ingredients;
+"""

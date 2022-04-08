@@ -32,7 +32,7 @@ def register_user():
 
 @app.route('/add_ingredient', methods=['POST'])  # recieves single ingredient, sends back json with all recipes
 def add_ingredient():
-    new_ingredient = request.get_json()
+    new_ingredient = request.get_json()[1:-1].lower()
     print("Got new ingredient: " + new_ingredient)
     dbt.add_ingredient_to_db(new_ingredient)
 
@@ -51,8 +51,9 @@ def add_ingredient():
 @app.route('/generate_recipes', methods=['POST'])
 def generate_recipes():
     request_data = request.get_json()
-    ai_recipe = ai_recipes.generate_ai_recipe(model, tokenizer, ingredients)
-    queried_recipes = dbt.get_recipes(user_id, ingredients)
+    ingredients = dbt.get_cur_ingredients()
+    ai_recipe = ai_recipes.generate_ai_recipe(model, tokenizer, ", ".join(ingredients))
+    queried_recipes = dbt.get_recipes()
     return jsonify("recipe list generated")
 
 

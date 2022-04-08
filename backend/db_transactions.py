@@ -41,22 +41,18 @@ def add_user_to_db(user_options):
 
 
 def get_ingredients(user_options):
-    query = f"SELECT id, name, order_num FROM ingredients WHERE 1=1"
+    query = f"SELECT name, price, order_num FROM ingredients WHERE 1=1"
     for user_tag, ingredient_tag in INGREDIENTS_TAGS.items():
         if user_options[user_tag]:
             query += f"\nAND {ingredient_tag} IS NULL"
     query += "\nORDER BY order_num ASC;"
     cur = conn.execute(query)
-    return [line[:2] for line in cur.fetchall()]
+    return [[line[0], "", line[1]] for line in cur.fetchall()]
 
 
 def get_user_options():
     cur = conn.execute(q.USERS_DATA_QUERY)
     return utils.list_to_user_dict(cur.fetchall()[0])
-
-
-def get_recipes(user_id, ingredients):
-    return None
 
 
 def get_recipe_numbers():
@@ -93,3 +89,12 @@ def reset_ingredients():
 def add_ingredient_to_db(name):
     conn.execute(f"INSERT INTO cur_ingredients (name) VALUES ('{name}');")
     conn.commit()
+
+
+def get_cur_ingredients():
+    cur = conn.execute(q.CUR_INGREDIENTS_QUERY)
+    return [line[0] for line in cur.fetchall()]
+
+
+def get_recipes(user_id, ingredients):
+    return None
