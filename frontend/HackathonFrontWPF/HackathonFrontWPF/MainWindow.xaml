@@ -22,13 +22,13 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="0" Grid.Column="0"
+                <Button Name="btnBack" Visibility="Hidden" Grid.Row="0" Grid.Column="0"
                         Content="Back"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"
                         FontSize="30"
                         Background="Transparent"
-                        BorderThickness="0"
+                        BorderThickness="0" Click="btnBack_Click"
                         ></Button>
                 <Button Grid.Row="0" Grid.Column="2"
                         Content="Settings"
