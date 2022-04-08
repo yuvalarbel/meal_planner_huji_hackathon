@@ -16,7 +16,7 @@ SELECT COUNT(*) AS num_free
          WHERE ingredient_id NOT IN (
              SELECT id
              FROM ingredients
-             WHERE name IN ('{ingredients}'))
+             WHERE name IN (SELECT name FROM cur_ingredients))
      )
  )
 {kosher}
@@ -36,13 +36,13 @@ WITH recipe_prices AS
          WHERE ingredient_id NOT IN (
              SELECT id
              FROM ingredients
-             WHERE name IN ('{ingredients}'))
+             WHERE name IN (SELECT name FROM cur_ingredients))
      )
  )
   AND ri.ingredient_id NOT IN (
      SELECT id
      FROM ingredients
-     WHERE name IN ('{ingredients}')
+     WHERE name IN (SELECT name FROM cur_ingredients)
  )
 {constraints}
  GROUP BY recipe_id
@@ -53,3 +53,16 @@ SELECT rp.recipe_id, rp.sum_price
  INNER JOIN recipes r ON (r.id = rp.recipe_id)
 {kosher}
  ORDER BY sum_price ASC;"""
+
+
+RESET_INGREDIENTS_QUERY = """
+DELETE FROM cur_ingredients
+ WHERE 1=1;
+"""
+
+USERS_DATA_QUERY = """
+SELECT *
+  FROM users u
+ INNER JOIN user_settings us on u.id = us.user_id
+ WHERE id = (SELECT MAX(id) FROM users);
+"""
