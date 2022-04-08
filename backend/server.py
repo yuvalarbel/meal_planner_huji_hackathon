@@ -23,6 +23,7 @@ def register_user():
 
     request_data = json.loads(request.get_json())
     user_options = utils.analyze_user_info(request_data)
+    user_options['id'] = user_id
 
     updated_user_options = dbt.add_user_to_db(user_options)
     return_data = dbt.get_ingredients(updated_user_options)
@@ -33,7 +34,6 @@ def register_user():
 @app.route('/add_ingredient', methods=['POST'])  # recieves single ingredient, sends back json with all recipes
 def add_ingredient():
     request_data = json.loads(request.get_json())
-
     dbt.add_ingredient_to_db(request_data['Name'])
 
     free_count, paid_count, min_price = dbt.get_recipe_numbers()

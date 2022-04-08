@@ -14,3 +14,17 @@ def analyze_user_info(user_info):
      user_dict['no_soy'] = user_info['NoSoy']
      user_dict['no_gluten'] = user_info['NoGluten']
      return user_dict
+
+def list_to_user_dict(db_list):
+     user_dict = {}
+     user_dict['userid'] = db_list[0]
+     user_dict['username'] = db_list[1]
+     user_dict['password'] = db_list[3]
+     user_dict['email'] = db_list[2]
+     user_dict['kosher'] =  db_list[6]
+     user_dict['no_meat'] = db_list[7]
+     user_dict['no_nuts'] = db_list[8]
+     user_dict['no_dairy'] = db_list[9]
+     user_dict['no_soy'] = db_list[10]
+     user_dict['no_gluten'] = db_list[11]
+     return user_dict
