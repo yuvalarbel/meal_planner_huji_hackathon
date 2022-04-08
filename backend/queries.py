@@ -1,7 +1,7 @@
 #!%PYTHON_HOME%\python.exe
 # coding: utf-8
 
-MAX_USER_QUERY = "SELECT MAX(id) FROM users"
+MAX_USER_QUERY = "SELECT MAX(id) FROM users;"
 
 
 FREE_RECIPES_QUERY = """

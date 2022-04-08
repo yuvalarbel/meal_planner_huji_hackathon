@@ -17,15 +17,11 @@ PRICE_TRESHOLD = 50
 conn = sqlite3.connect('data.db', check_same_thread=False)
 
 
-def get_max_user_id():
-    cur = conn.execute(q.MAX_USER_QUERY)
-    if cur.rowcount == -1:
-        return 0
-    return cur.fetchone()[0]
-
 
 def add_user_to_db(user_options):
-    user_id = get_max_user_id() + 1
+    cur = conn.execute(q.MAX_USER_QUERY)
+    lines = cur.fetchall()
+    user_id = lines[0][0] + 1 if lines else 1
     user_options['id'] = user_id
     conn.execute(f"INSERT INTO users (id, username, password, email) "
                  f"VALUES ({user_options['id']}, "
@@ -45,13 +41,13 @@ def add_user_to_db(user_options):
 
 
 def get_ingredients(user_options):
-    query = f"SELECT id, name FROM ingredients WHERE 1=1"
+    query = f"SELECT id, name, order_num FROM ingredients WHERE 1=1"
     for user_tag, ingredient_tag in INGREDIENTS_TAGS.items():
         if user_options[user_tag]:
             query += f"\nAND {ingredient_tag} IS NULL"
-    query += "ORDER BY order_num ASC;"
+    query += "\nORDER BY order_num ASC;"
     cur = conn.execute(query)
-    return cur.fetchall()
+    return [line[:2] for line in cur.fetchall()]
 
 
 def get_user_options():
@@ -68,7 +64,8 @@ def get_recipe_numbers():
     kosher = "AND kosher = 1" if user_options['kosher'] else ""
     free_query = q.FREE_RECIPES_QUERY.format(kosher=kosher)
     cur = conn.execute(free_query)
-    free_count = 0 if cur.rowcount == -1 else cur.fetchone()[0]
+    lines = cur.fetchall()
+    free_count = lines[0][0] if lines else 0
 
     constraints_str = ""
     for user_tag, ingredient_tag in INGREDIENTS_TAGS.items():
@@ -78,12 +75,12 @@ def get_recipe_numbers():
     paid_query = q.PAID_RECIPES_QUERY.format(kosher=kosher,
                                              constraints=constraints_str, price=PRICE_TRESHOLD)
     cur = conn.execute(paid_query)
-    if cur.rowcount == -1:
+    lines = cur.fetchall()
+    if not lines:
         paid_count, min_price = 0, "$$$"
     else:
-        info = cur.fetchall()
-        paid_count = len(info)
-        min_price = info[0][1]
+        paid_count = len(lines)
+        min_price = lines[0][1]
 
     return free_count, paid_count, min_price
 

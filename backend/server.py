@@ -12,29 +12,29 @@ model = FlaxAutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME_OR_PATH)
 
 app = Flask(__name__)
 
-user_id = dbt.get_max_user_id()
-ingredients = []
-global_user_options = None
-
 
 @app.route('/register_user', methods=['POST']) # recieves user, sends back json with all ingridients
 def register_user():
     dbt.reset_ingredients()
 
     request_data = json.loads(request.get_json())
+    print("Got new user: ")
+    print(request_data)
     user_options = utils.analyze_user_info(request_data)
-    user_options['id'] = user_id
 
     updated_user_options = dbt.add_user_to_db(user_options)
     return_data = dbt.get_ingredients(updated_user_options)
+
+    print("Returning: ", return_data)
 
     return jsonify(return_data)
 
 
 @app.route('/add_ingredient', methods=['POST'])  # recieves single ingredient, sends back json with all recipes
 def add_ingredient():
-    request_data = json.loads(request.get_json())
-    dbt.add_ingredient_to_db(request_data['Name'])
+    new_ingredient = request.get_json()
+    print("Got new ingredient: " + new_ingredient)
+    dbt.add_ingredient_to_db(new_ingredient)
 
     free_count, paid_count, min_price = dbt.get_recipe_numbers()
     return_data = {
@@ -42,6 +42,8 @@ def add_ingredient():
         'paid_recipy_count': paid_count,
         'current_min_price': min_price
     }
+
+    print("Returning: ", return_data)
 
     return jsonify(return_data)
 
