@@ -9,12 +9,11 @@ import queries as q
 INGREDIENTS_TAGS = {'no_meat': 'contains_meat',
                     'no_nuts': 'contains_nuts',
                     'no_dairy': 'contains_dairy',
-                    'no_eggs': 'contains_eggs',
                     'no_soy': 'contains_soy',
                     'no_gluten': 'contains_gluten'}
 PRICE_TRESHOLD = 50
 
-conn = sqlite3.connect('data.db')
+conn = sqlite3.connect('data.db', check_same_thread=False)
 
 
 def get_max_user_id():
@@ -30,13 +29,12 @@ def add_user_to_db(user_options):
                         f"'{user_options['username']}', "
                         f"'{user_options['password']}', "
                         f"'{user_options['email']}');")
-    conn.execute(f"INSERT INTO user_settings (user_id, kosher, no_meat, no_nuts, no_dairy, no_eggs, no_soy, no_gluten)"
+    conn.execute(f"INSERT INTO user_settings (user_id, kosher, no_meat, no_nuts, no_dairy, no_soy, no_gluten)"
                  f"VALUES ({user_options['id']},"
                          f"{user_options['kosher']}, "
                          f"{user_options['no_meat']}, "
                          f"{user_options['no_nuts']}, "
                          f"{user_options['no_dairy']}, "
-                         f"{user_options['no_eggs']}, "
                          f"{user_options['no_soy']}, "
                          f"{user_options['no_gluten']});")
     conn.commit()
@@ -44,11 +42,11 @@ def add_user_to_db(user_options):
 
 def get_ingredients(user_options):
     query = f"SELECT id, name FROM ingredients WHERE 1=1"
-    for user_tag, ingredient_tag in INGREDIENTS_TAGS.keys():
+    for user_tag, ingredient_tag in INGREDIENTS_TAGS.items():
         if user_options[user_tag]:
             query += f"\nAND {ingredient_tag} IS NULL"
     query += "ORDER BY order_num ASC;"
-    cur = conn.execute()
+    cur = conn.execute(query)
     return cur.fetchall()
 
 
@@ -64,7 +62,7 @@ def get_recipe_numbers(ingredients, user_options):
     free_count = 0 if cur.rowcount == -1 else cur.fetchone()[0]
 
     constraints_str = ""
-    for user_tag, ingredient_tag in INGREDIENTS_TAGS.keys():
+    for user_tag, ingredient_tag in INGREDIENTS_TAGS.items():
         if user_options[user_tag]:
             constraints_str += f"\nAND {ingredient_tag} IS NULL"
 

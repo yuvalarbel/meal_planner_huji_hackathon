@@ -4,6 +4,7 @@ from transformers import AutoTokenizer
 import recipe_generator as ai_recipes
 import db_transactions as dbt
 import utils
+import json
 
 MODEL_NAME_OR_PATH = "flax-community/t5-recipe-generation"
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME_OR_PATH, use_fast=True)
@@ -23,9 +24,9 @@ def register_user():
 
     user_id += 1
 
-    request_data = request.get_json()
-    request_data['id'] = user_id
+    request_data = json.loads(request.get_json())
     user_options = utils.analyze_user_info(request_data)
+    user_options['id'] = user_id
 
     global_user_options = user_options
 
@@ -37,7 +38,7 @@ def register_user():
 
 @app.route('/add_ingredient', methods=['POST'])  # recieves single ingredient, sends back json with all recipes
 def add_ingredient():
-    request_data = request.get_json()
+    request_data = json.loads(request.get_json())
     ingredients.append(request_data['Name'])
 
     free_count, paid_count, min_price = dbt.get_recipe_numbers(ingredients, global_user_options)
