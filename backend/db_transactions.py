@@ -13,6 +13,7 @@ INGREDIENTS_TAGS = {'no_meat': 'contains_meat',
                     'no_soy': 'contains_soy',
                     'no_gluten': 'contains_gluten'}
 PRICE_TRESHOLD = 50
+RECIPE_NAMES = ['title', 'ingredients', 'directions', 'price', 'missing_ingredients']
 
 conn = sqlite3.connect('data.db', check_same_thread=False)
 
@@ -98,5 +99,9 @@ def get_cur_ingredients():
     return [line[0] for line in cur.fetchall()]
 
 
-def get_recipes(user_id, ingredients):
-    return None
+def get_recipes():
+    cur = conn.execute(q.GENERATE_RECIPES_QUERY)
+    return_list = [dict(zip(RECIPE_NAMES, line)) for line in cur.fetchall()]
+    for recipe in return_list:
+        recipe['is_ai'] = False
+    return return_list

@@ -71,3 +71,12 @@ CUR_INGREDIENTS_QUERY = """
 SELECT name
   FROM cur_ingredients;
 """
+
+GENERATE_RECIPES_QUERY = """
+SELECT title, ingredients_text, directions_text, SUM(i.price) AS sum_price, group_concat(i.name, ", ") AS missing_ingredients
+  FROM recipes r
+ INNER JOIN recipe_ingredients ri on r.id = ri.recipe_id
+ INNER JOIN ingredients i on i.id = ri.ingredient_id
+ GROUP BY r.id
+ ORDER BY sum_price ASC;
+"""

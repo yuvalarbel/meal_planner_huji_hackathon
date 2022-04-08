@@ -53,8 +53,10 @@ def generate_recipes():
     request_data = request.get_json()
     ingredients = dbt.get_cur_ingredients()
     ai_recipe = ai_recipes.generate_ai_recipe(model, tokenizer, ", ".join(ingredients))
+    ai_recipe['is_ai'] = True
     queried_recipes = dbt.get_recipes()
-    return jsonify("recipe list generated")
+    return_data = [ai_recipe] + queried_recipes
+    return jsonify(return_data)
 
 
 if __name__ == '__main__':
