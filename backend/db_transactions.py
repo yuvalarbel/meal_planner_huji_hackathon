@@ -47,7 +47,9 @@ def get_ingredients(user_options):
             query += f"\nAND {ingredient_tag} IS NULL"
     query += "\nORDER BY order_num ASC;"
     cur = conn.execute(query)
-    return [[line[0], "", line[1]] for line in cur.fetchall()]
+    return [{'Name': line[0],
+             'Image_path': "",
+             'Price': line[1]} for line in cur.fetchall()]
 
 
 def get_user_options():
