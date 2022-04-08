@@ -1,5 +1,5 @@
 CREATE TABLE users (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  id INTEGER PRIMARY KEY,
   username TEXT NOT NULL,
   password TEXT NOT NULL,
   email TEXT NOT NULL,
@@ -8,12 +8,13 @@ CREATE TABLE users (
 
 CREATE TABLE user_settings (
   user_id INTEGER NOT NULL,
-  no_meat INTEGER DEFAULT 0,
-  no_nuts INTEGER DEFAULT 0,
-  no_dairy INTEGER DEFAULT 0,
-  no_eggs INTEGER DEFAULT 0,
-  no_soy INTEGER DEFAULT 0,
-  no_gluten INTEGER DEFAULT 0,
+  kosher BOOLEAN,
+  no_meat BOOLEAN,
+  no_nuts BOOLEAN,
+  no_dairy BOOLEAN,
+  no_eggs BOOLEAN,
+  no_soy BOOLEAN,
+  no_gluten BOOLEAN,
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
@@ -21,32 +22,26 @@ CREATE TABLE recipes (
   id INTEGER PRIMARY KEY,
   title TEXT NOT NULL,
   link TEXT NOT NULL,
-  image_path
+  ingredients_text TEXT NOT NULL,
+  directions_text TEXT NOT NULL,
+  image_path TEXT
 );
 
 CREATE TABLE ingredients (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  id INTEGER PRIMARY KEY,
   name TEXT NOT NULL,
-  contains_meat INTEGER DEFAULT 0,
-  contains_nuts INTEGER DEFAULT 0,
-  contains_dairy INTEGER DEFAULT 0,
-  contains_eggs INTEGER DEFAULT 0,
-  contains_soy INTEGER DEFAULT 0,
-  contains_gluten INTEGER DEFAULT 0
+  price REAL NOT NULL,
+  contains_meat BOOLEAN,
+  contains_nuts BOOLEAN,
+  contains_dairy BOOLEAN,
+  contains_eggs BOOLEAN,
+  contains_soy BOOLEAN,
+  contains_gluten BOOLEAN
 );
 
 CREATE TABLE recipe_ingredients (
   recipe_id INTEGER NOT NULL,
   ingredient_id INTEGER NOT NULL,
-  amount TEXT NOT NULL,
-  unit TEXT NOT NULL,
   FOREIGN KEY (recipe_id) REFERENCES recipes(id),
   FOREIGN KEY (ingredient_id) REFERENCES ingredients(id)
-);
-
-CREATE TABLE recipe_directions (
-  recipe_id INTEGER NOT NULL,
-  step_number INTEGER NOT NULL,
-  step TEXT NOT NULL,
-  FOREIGN KEY (recipe_id) REFERENCES recipes(id)
 );
