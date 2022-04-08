@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="HackathonFrontWPF.MVVM.View.SingleRecipeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HackathonFrontWPF.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="500">
+    <Grid>
+        <Rectangle Name="clickRect" HorizontalAlignment="Center" Height="200" Fill="White" Opacity="0.01" VerticalAlignment="Center" Width="2084"/>
+        <Rectangle HorizontalAlignment="Left" Height="48" Margin="426,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="48"/>
+        <TextBlock Name="txtTime" HorizontalAlignment="Left" Margin="397,0,0,0" TextWrapping="Wrap" Text="Time" VerticalAlignment="Center"/>
+        <Rectangle HorizontalAlignment="Left" Height="48" Margin="340,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="48"/>
+        <TextBlock Name="txtPrice" HorizontalAlignment="Left" Margin="311,0,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Center"/>
+        <TextBlock Name="txtName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="RecipeName" VerticalAlignment="Center" Margin="155,0,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="96" Margin="32,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="97"/>
+
+    </Grid>
+</UserControl>

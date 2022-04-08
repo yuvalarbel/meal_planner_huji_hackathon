@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HackathonFrontWPF.MVVM.Model
 {
-    public class Recipe
+    public class Recipy
     {
         public int Time { get; set; }
         public string? Name { get; set; }
@@ -17,7 +17,7 @@ namespace HackathonFrontWPF.MVVM.Model
         public float? Price { get; set; }
         public string? Category { get; set; }
         // create class constructor
-        public Recipe(int time, string? name, string? description, string? image_path, ArrayList? ingredients_arr, float? price, string? category)
+        public Recipy(int time, string? name, string? description, string? image_path, ArrayList? ingredients_arr, float? price, string? category)
         {
             Time = time;
             Name = name;
