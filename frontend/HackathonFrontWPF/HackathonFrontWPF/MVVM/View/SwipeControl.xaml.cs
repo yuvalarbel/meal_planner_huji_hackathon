@@ -24,6 +24,12 @@ namespace WpfApp2
     /// </summary>
     public partial class SwipeControl : UserControl
     {
+        SolidColorBrush redBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#7a040d");
+        SolidColorBrush greenBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#a7c958");
+        SolidColorBrush beigeBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#f2e8cf");
+
+        //string rec1=""
+
 
         public MainWindow mainWindow { get; set; }
         public List<Ingredient> ingredientLst { get; set; }
@@ -31,8 +37,8 @@ namespace WpfApp2
         public List<IngredientControl> ingredientControlLst { get; set; }
         public List<Recipy> recipyLst { get; set; }
         public List<SingleRecipeControl> recipyControlLst { get; set; }
-
         public int currIngredientIndex { get; set; }
+        public bool colorFlag { get; set; }
         public SwipeControl(List<Ingredient> ings, MainWindow main)
         {
             InitializeComponent();
@@ -92,16 +98,22 @@ namespace WpfApp2
         }
         private void generateRecipies()
         {
-            recipyLst.Add(new Recipy(40, "Chicken McNuggets", "Chickensdfsd", "url", null, 30, ""));
-            recipyLst.Add(new Recipy(40, "Caeser's Salad", "Chickensdfsd", "url", null, 30, ""));
-            recipyLst.Add(new Recipy(40, "Deez Nutz", "Chickensdfsd", "url", null, 30, ""));
-            recipyLst.Add(new Recipy(40, "Root'n Toot'n Raspberry", "Chickensdfsd", "url", null, 30, ""));
-            recipyLst.Add(new Recipy(40, "Tamar Im Egoz", "Chickensdfsd", "url", null, 30, ""));
-            recipyLst.Add(new Recipy(40, "Krabby Patty", "Chickensdfsd", "url", null, 30, ""));
+            recipyLst.Add(new Recipy(40, "Chicken Stew", "Chickensdfsd", "C:/Users/User/Desktop/resources/recipes/bowl2.png", null, 0, ""));
+            recipyLst.Add(new Recipy(40, "Fried Rice", "Chickensdfsd", "C:/Users/User/Desktop/resources/recipes/bowl3.png", null, 20, ""));
+            recipyLst.Add(new Recipy(40, "Tofu Salad", "Chickensdfsd", "C:/Users/User/Desktop/resources/recipes/bowl1.png", null, 100, ""));
+            recipyLst.Add(new Recipy(40, "Sushi Bowl", "Chickensdfsd", "C:/Users/User/Desktop/resources/recipes/bowl3.png", null, 125, ""));
+            //recipyLst.Add(new Recipy(40, "Root'n Toot'n Raspberry", "Chickensdfsd", "url", null, 30, ""));
+            //recipyLst.Add(new Recipy(40, "Tamar Im Egoz", "Chickensdfsd", "url", null, 30, ""));
+            //recipyLst.Add(new Recipy(40, "Krabby Patty", "Chickensdfsd", "url", null, 30, ""));
 
             foreach (Recipy rec in recipyLst)
             {
                 SingleRecipeControl ctrl = new SingleRecipeControl(rec);
+                if (colorFlag)
+                    ctrl.rectBack.Fill = beigeBrush;
+                else
+                    ctrl.rectBack.Fill = beigeBrush;
+                colorFlag = !colorFlag;
                 ctrl.clickRect.MouseDown += (s, e) =>
                 {
                     mainWindow.removeControl(ctrl);

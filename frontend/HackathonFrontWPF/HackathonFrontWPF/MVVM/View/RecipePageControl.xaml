@@ -5,15 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hack"
              mc:Ignorable="d" 
-             d:DesignHeight="690" d:DesignWidth="500">
+             d:DesignHeight="690" d:DesignWidth="500"
+             FontFamily="Nexa">
     <Grid>
-        <Border CornerRadius="50" Grid.RowSpan="2">
-            <Border.Background>
-                <LinearGradientBrush>
-                    <GradientStop Color="#7be9f6" Offset="0.0"/>
-                    <GradientStop Color="#f083da" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.Background>
+        <Border CornerRadius="50" Grid.RowSpan="2"
+                Background="#386641">
+            
         </Border>
 
 
@@ -24,57 +21,56 @@
 
             </Grid.RowDefinitions>
 
-            <Rectangle Name="imgRect" Grid.Row="0"
-                       Height="250"
-                       Width="250"
-                       Margin="0,35,0,0">
-                <Rectangle.Fill>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black"/>
-                        <GradientStop Color="#FF9C34C5" Offset="1"/>
-                    </LinearGradientBrush>
-                </Rectangle.Fill>
-            </Rectangle>
 
-
-            <TextBlock Name="txtName" FontSize="40" HorizontalAlignment="Center" Text="Recipy" Margin="0,297,0,194" Grid.RowSpan="2" />
+            <TextBlock Foreground="#f2e8cf"
+                Name="txtName" FontSize="40" 
+                HorizontalAlignment="Center" Text="Recipe" Margin="0,310,0,194" Grid.RowSpan="2" />
             <ScrollViewer  
                 VerticalScrollBarVisibility="Hidden"
                           Grid.Row="1"
                           Width="420" Margin="40,67,40,15">
-                <TextBlock Name="txtDescription" TextWrapping="Wrap"
-                           FontSize="20"
-                Text="You only need a few basic staple ingredients for this cheesecake recipe.&#10;
-Block cream cheese: Four 8-ounce blocks&#10; of full-fat cream cheese are the base of this cheesecake.&#10; That's 2 pounds. Make sure you're buying the blocks of cream cheese and not cream cheese spread. There's no diets allowed in &#10;cheesecake, so don't pick up the reduced fat variety!
-Sugar: 1 cup. Not that much considering&#10; how many mouths you can feed with this dessert. Over-sweetened cheesecake is hardly cheesecake anymore. Using only 1 cup of sugar gives this cheesecake the opportunity to balance tangy and sweet, &#10;just as classic cheesecake should taste.
-Sour cream: 1 cup. I recently tested a &#10;cheesecake recipe with 1 cup of heavy cream instead, but&#10; ended up sticking with my original (which can be found here with blueberry swirls!). I was curious about the heavy cream addition and figured it would yield a softer cheesecake bite. The cheesecake was soft, but lacked the stability and richness I wanted. It was almost too creamy. Sour cream is most definitely the right choice.
-A little flavor: 1 teaspoon of pure &#10;vanilla extract and 2 of lemon juice. The lemon juice brightens up the &#10;cheesecake's overall flavor and vanilla is always a good idea.
-Eggs: 3 eggs are the final ingredient. &#10;You'll beat the eggs in last, one at a time, until they are *just* &#10;incorporated. Do not overmix the batter once the eggs are added. This will whip air into the cheesecake batter, resulting in &#10;cheesecake cracking and deflating.
+                <TextBlock Name="txtDescription" TextWrapping="Wrap" Foreground="#f2e8cf"
+                           FontSize="18" FontStyle="Italic"
+                Text="Grilled Potatoes In A Package
+Prep Time: 40 min
+Missing Ingredients: American or Cheddar Cheese, Onions
+Full price to completion: 16 NIS
+
+Ingredients:
+2 potatoes per package
+sliced onions and peppers (any other veggies you prefer)
+1 Tbsp. butter
+salt and pepper to taste
+sliced American or cheddar cheese
+
+Directions:
+Tear off a piece of non-stick foil about 10-12 inches long. Peel and cut the potatoes, add the sliced onions and peppers, along with the tablespoon of butter and salt and pepper into the center of the foil.
+Fold the foil and close it tightly at the top and on the sides.
+Cook it on the grill on low for approximately 30 minutes.
+Once the potatoes are done, open the packet (be careful of the steam), put slices of the cheese on the potatoes and close the packet up so it can melt.
 "
                 />
             </ScrollViewer>
+            <Image Name="imgBowl" Margin="109,42,105,8" Source="/resources/ingredients/celery.png" Stretch="Fill"/>
 
         </Grid>
 
 
 
         <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="350"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
 
-
-            <TextBlock Grid.Column="1"
+            <TextBlock 
                        HorizontalAlignment="Center" VerticalAlignment="Center">           
                 <Hyperlink TextDecorations=""
                     NavigateUri="https://www.shufersal.co.il/online/he/A" 
                     RequestNavigate="Hyperlink_RequestNavigate">
                     <TextBlock Height="60"
-                               Width="50"
-                               Text="$"
+                               Width="104"
+                               Text="BUY"
                                Foreground="White"
-                               FontSize="50" 
+                               
+                               FontSize="40" 
+                               VerticalAlignment="Center"
                                TextAlignment="Center"/>
                 </Hyperlink>
             </TextBlock>

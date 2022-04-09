@@ -5,15 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HackathonFrontWPF.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="500">
+             d:DesignHeight="150" d:DesignWidth="500"
+             FontFamily="Nexa">
     <Grid>
+        <Rectangle Name="rectBack" RadiusX="20" RadiusY="20" Fill="Pink" Margin="10,16,10,10" />
         <Rectangle Name="clickRect" HorizontalAlignment="Center" Height="200" Fill="White" Opacity="0.01" VerticalAlignment="Center" Width="2084"/>
-        <Rectangle HorizontalAlignment="Left" Height="48" Margin="426,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="48"/>
-        <TextBlock Name="txtTime" HorizontalAlignment="Left" Margin="397,0,0,0" TextWrapping="Wrap" Text="Time" VerticalAlignment="Center"/>
-        <Rectangle HorizontalAlignment="Left" Height="48" Margin="340,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="48"/>
-        <TextBlock Name="txtPrice" HorizontalAlignment="Left" Margin="311,0,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Center"/>
-        <TextBlock Name="txtName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="RecipeName" VerticalAlignment="Center" Margin="155,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="96" Margin="32,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="97"/>
+        <TextBlock Name="txtTime" HorizontalAlignment="Left" Margin="386,0,0,0" TextWrapping="Wrap" Text="Time" VerticalAlignment="Center"/>
+        <TextBlock Name="txtPrice" HorizontalAlignment="Left" Margin="315,0,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Center"/>
+        <TextBlock Name="txtName" HorizontalAlignment="Left" FontSize="18" TextWrapping="Wrap" Text="RecipeName" VerticalAlignment="Center" Margin="169,0,0,0"/>
+        <!--<Rectangle HorizontalAlignment="Left" Height="96" Margin="32,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="97"/>-->
+        <Image Margin="346,88,131,88" Source="C:/Users/User/Desktop/resources/shekel.png" Stretch="Fill"/>
+        <Image Margin="440,88,37,88" Source="C:/Users/User/Desktop/resources/clock.png" Stretch="Fill"/>
+        <Image Name="imgBowl" HorizontalAlignment="Left" Margin="10,36,0,30" Source="C:/Users/User/Desktop/resources/recipes/bowl1.png" Stretch="Fill" Width="148"/>
 
     </Grid>
 </UserControl>

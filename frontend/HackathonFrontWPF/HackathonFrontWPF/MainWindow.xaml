@@ -10,9 +10,10 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
-        ResizeMode="NoResize" MouseDown="Window_MouseDown">
+        ResizeMode="NoResize" MouseDown="Window_MouseDown"
+        FontFamily="Nexa">
 
-    <Border Background="DimGray"
+    <Border Background="#386641"
         CornerRadius="50">
 
         <Grid Name="mainGrid">
@@ -22,30 +23,30 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Button Name="btnBack" Visibility="Hidden" Grid.Row="0" Grid.Column="0"
-                        Content="Back"
+                <Button Name="btnBack" Foreground="#f2e8cf" Visibility="Hidden" Grid.Row="0" Grid.Column="0"
+                        
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"
                         FontSize="30"
                         Background="Transparent"
                         BorderThickness="0" Click="btnBack_Click"
-                        ></Button>
-                <Button Grid.Row="0" Grid.Column="2"
-                        Content="Settings"
+                        >
+                    <Image Source="C:/Users/User/Desktop/resources/arrow.png" Height="47" Width="48" />
+
+                </Button>
+                <Button Foreground="#f2e8cf" Grid.Row="0" Grid.Column="2"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"
                         FontSize="30"
                         Background="Transparent"
+                        
                         BorderThickness="0"
-                        ></Button>
-                <Rectangle Grid.Row="0" Grid.Column="1"
-                           Height="50"
-                           Width="50"
-                           Fill="AntiqueWhite"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"
-                           Name="logoRect">
-                </Rectangle>
+                        >
+                    <Image Height="58" Source="C:/Users/User/Desktop/resources/settings.png" Stretch="Fill" Width="58"/>
+                </Button>
+                <Image Height="105" Source="C:/Users/User/Desktop/resources/small-logo.jpg" Stretch="Fill" Width="115"
+                       Grid.Column="1"/>
+
             </Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="110"/>

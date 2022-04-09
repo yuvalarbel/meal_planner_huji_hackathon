@@ -1,8 +1,11 @@
 ﻿using HackathonFrontWPF.MVVM.Model;
 using HackathonFrontWPF.MVVM.View;
+using Network;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
 using WpfApp2;
 
 namespace Hack
@@ -34,11 +38,23 @@ namespace Hack
             this.PreviewKeyDown += new KeyEventHandler(HandleEsc);
 
             // -------- MOCKUP INGREDIENT LIST ---------
+            User user=new User("a","a","a",true,true,true,true,true,true,true);
+
+            HttpClient client = new HttpClient();
+            var json = JsonConvert.SerializeObject(user);
+            //var postResponse = await client.PostAsJsonAsync("http://172.29.120.240:8080/register_user", json);
+            // create a List of Ingredient from postResponse
+            //List<Ingredient> recipies = JsonConvert.DeserializeObject<List<Ingredient>>(postResponse.Content.ReadAsStringAsync().Result);
+
             List<Ingredient> ingLst = new List<Ingredient>();
-            ingLst.Add(new Ingredient("aaa", "url", 200, 2));
-            ingLst.Add(new Ingredient("bbb", "url", 200, 2));
-            ingLst.Add(new Ingredient("ccc", "url", 200, 2));
-            ingLst.Add(new Ingredient("DDD", "url", 200, 2));
+            ingLst.Add(new Ingredient("Chicken", "C:/Users/User/Desktop/resources/ingredients/chicken.png", 200, 2));
+            ingLst.Add(new Ingredient("Garlic", "C:/Users/User/Desktop/resources/ingredients/garlic.png", 200, 2));
+            ingLst.Add(new Ingredient("Carrot", "C:/Users/User/Desktop/resources/ingredients/carrot.png", 200, 2));
+            ingLst.Add(new Ingredient("Paprika", "C:/Users/User/Desktop/resources/ingredients/paprika.png", 200, 2));
+            ingLst.Add(new Ingredient("Cheese", "C:/Users/User/Desktop/resources/ingredients/cheese.png", 200, 2));
+            ingLst.Add(new Ingredient("Flour", "C:/Users/User/Desktop/resources/ingredients/flour.png", 200, 2));
+            ingLst.Add(new Ingredient("Milk", "C:/Users/User/Desktop/resources/ingredients/milk.png", 200, 2));
+            ingLst.Add(new Ingredient("Egg", "C:/Users/User/Desktop/resources/ingredients/egg1.png", 200, 2));
             // -------- MOCKUP INGREDIENT LIST ---------
 
             regControl = new RegistrationControl(this);
@@ -47,7 +63,7 @@ namespace Hack
 
 
             swipeControl = new SwipeControl(ingLst, this);
-            loadControl(regControl);
+            loadControl(new WelcomeWindow(this));
         }
 
 

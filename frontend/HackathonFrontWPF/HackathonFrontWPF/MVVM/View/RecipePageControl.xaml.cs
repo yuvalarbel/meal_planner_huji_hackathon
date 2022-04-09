@@ -28,7 +28,8 @@ namespace Hack
             InitializeComponent();
 
             recipy = rec;
-            txtDescription.Text = recipy.Description;
+            imgBowl.Source = new BitmapImage(new Uri(rec.Image_path));
+            //txtDescription.Text = recipy.Description;
             txtName.Text = recipy.Name;
         }
 
