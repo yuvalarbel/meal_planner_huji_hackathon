@@ -48,6 +48,7 @@ def generation_function(model, tokenizer, texts):
         tokenizer)
     return generated_recipe
 
+
 def generate_ai_recipe(model, tokenizer, items):
     generated = generation_function(model, tokenizer, items)
     recipe = {}
@@ -56,9 +57,25 @@ def generate_ai_recipe(model, tokenizer, items):
         for section in sections:
             section = section.strip()
             if section.startswith("title:"):
-                recipe["title"] = section.replace("title: ", "")
+                section = section.replace("title: ", "")
+                recipe["title"] = section
+                headline = "TITLE"
             elif section.startswith("ingredients:"):
-                recipe["ingredients"] = section.replace("ingredients: ", "")
+                section = section.replace("ingredients: ", "")
+                recipe["ingredients"] = section
+                headline = "INGREDIENTS"
             elif section.startswith("directions:"):
-                recipe["directions"] = section.replace("directions: ", "")
+                section = section.replace("directions: ", "")
+                recipe["directions"] = section.replace('--', '\n')
+                headline = "DIRECTIONS"
+
+            if headline == "TITLE":
+                print(f"[{headline}]: {section.strip().capitalize()}")
+            else:
+                section_info = [f"  - {i + 1}: {info.strip().capitalize()}" for i, info in
+                                enumerate(section.split("--"))]
+                print(f"[{headline}]:")
+                print("\n".join(section_info))
+
+        print("-" * 130)
         return recipe
