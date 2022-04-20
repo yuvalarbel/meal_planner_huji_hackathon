@@ -31,3 +31,35 @@ We are using the incredible Chef Transformer to generate our AI recipes - https:
 ![image](https://user-images.githubusercontent.com/36603609/164171115-dfc4510e-7d32-4fab-b879-7ec409c81f93.png)
 
 Credits for images and icons used in this project:
+<a href="https://www.flaticon.com/free-icons/return" title="return icons">Return icons created by Uniconlabs - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/return" title="return icons">Return icons created by alkhalifi design - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/settings" title="settings icons">Settings icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/bacon" title="bacon icons">Bacon icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/fried-egg" title="fried egg icons">Fried egg icons created by Icon home - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/egg" title="egg icons">Egg icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/butter" title="Butter icons">Butter icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/carrot" title="carrot icons">Carrot icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/food" title="food icons">Food icons created by Smashicons - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/onion" title="onion icons">Onion icons created by Good Ware - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/potato" title="potato icons">Potato icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/sugar" title="sugar icons">Sugar icons created by juicy_fish - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/chicken" title="chicken icons">Chicken icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/milk" title="milk icons">Milk icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/rice" title="rice icons">Rice icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/tomato" title="tomato icons">Tomato icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/bread" title="bread icons">Bread icons created by kerismaker - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/celery" title="celery icons">Celery icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/garlic" title="garlic icons">Garlic icons created by Smashicons - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/salad" title="salad icons">Salad icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/bacon" title="bacon icons">Bacon icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/cooking" title="cooking icons">Cooking icons created by mangsaabguru - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/dairy-free" title="dairy free icons">Dairy free icons created by surang - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/gluten-free" title="gluten free icons">Gluten free icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/food-and-restaurant" title="food and restaurant icons">Food and restaurant icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/vegan" title="vegan icons">Vegan icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/vegan" title="vegan icons">Vegan icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/no-meat" title="no meat icons">No meat icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/soy-free" title="soy free icons">Soy free icons created by PLANBSTUDIO - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/kosher" title="kosher icons">Kosher icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/shekel" title="shekel icons">Shekel icons created by Royyan Wijaya - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/clock" title="clock icons">Clock icons created by dmitri13 - Flaticon</a>
