@@ -68,7 +68,7 @@ SELECT *
 """
 
 CUR_INGREDIENTS_QUERY = """
-SELECT name
+SELECT DISTINCT name
   FROM cur_ingredients;
 """
 
