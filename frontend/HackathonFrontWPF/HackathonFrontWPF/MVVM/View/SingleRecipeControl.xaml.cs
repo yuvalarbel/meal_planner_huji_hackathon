@@ -25,9 +25,10 @@ namespace HackathonFrontWPF.MVVM.View
         public SingleRecipeControl(Recipy rec)
         {
             InitializeComponent();
+            imgBowl.Source = new BitmapImage(new Uri( rec.Image_path));
             recipy = rec;
             txtName.Text = recipy.Name;
-            txtTime.Text = recipy.Time.ToString() + "mins";
+            txtTime.Text = recipy.Time.ToString() + " mins";
             txtPrice.Text = recipy.Price.ToString();
         }
     }

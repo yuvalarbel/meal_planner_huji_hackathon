@@ -12,7 +12,7 @@ namespace HackathonFrontWPF.MVVM.Model
         public int Time { get; set; }
         public string? Name { get; set; }
         public string? Description { get; set; }
-        public string? Image_path { get; set; }
+        public string Image_path { get; set; }
         public ArrayList? Ingredients_arr { get; set; }
         public float? Price { get; set; }
         public string? Category { get; set; }

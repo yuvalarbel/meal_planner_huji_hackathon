@@ -28,6 +28,8 @@ namespace Hack
         public bool isSoy { get; set; }
         public bool isMilk { get; set; }
         public bool isNuts { get; set; }
+        SolidColorBrush redBrush=(SolidColorBrush) new BrushConverter().ConvertFrom("#7a040d");
+        SolidColorBrush greenBrush= (SolidColorBrush)new BrushConverter().ConvertFrom("#a7c958");
 
         public RegistrationControl(MainWindow main)
         {
@@ -44,42 +46,64 @@ namespace Hack
         private void btnGluten_MouseDown(object sender, MouseButtonEventArgs e)
         {
             isGluten = !isGluten;
-            if(btnGluten.Fill==Brushes.LightGreen)
-                btnGluten.Fill=Brushes.PaleVioletRed;
+            if(btnGluten.Fill!=redBrush)
+                btnGluten.Fill= redBrush;
             else
-                btnGluten.Fill = Brushes.LightGreen;
+                btnGluten.Fill = greenBrush;
         }
 
         private void btnSoy_MouseDown(object sender, MouseButtonEventArgs e)
         {
             isSoy = !isSoy;
-            if (btnSoy.Fill == Brushes.LightGreen)
-                btnSoy.Fill = Brushes.PaleVioletRed;
+            if (btnSoy.Fill != redBrush)
+                btnSoy.Fill = redBrush;
             else
-                btnSoy.Fill = Brushes.LightGreen;
+                btnSoy.Fill = greenBrush;
         }
 
         private void btnMilk_MouseDown(object sender, MouseButtonEventArgs e)
         {
             isMilk = !isMilk;
-            if (btnMilk.Fill == Brushes.LightGreen)
-                btnMilk.Fill = Brushes.PaleVioletRed;
+            if (btnMilk.Fill != redBrush)
+                btnMilk.Fill = redBrush;
             else
-                btnMilk.Fill = Brushes.LightGreen;
+                btnMilk.Fill = greenBrush;
         }
 
         private void btnNuts_MouseDown(object sender, MouseButtonEventArgs e)
         {
             isNuts = !isNuts;
-            if (btnNuts.Fill == Brushes.LightGreen)
-                btnNuts.Fill = Brushes.PaleVioletRed;
+            if (btnNuts.Fill != redBrush)
+                btnNuts.Fill = redBrush;
             else
-                btnNuts.Fill = Brushes.LightGreen;
+                btnNuts.Fill = greenBrush;
         }
 
         private void btnVegetarian_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            isVegetarian = !isVegetarian;
+            if (btnVegetarian.Fill != redBrush)
+                btnVegetarian.Fill = redBrush;
+            else
+                btnVegetarian.Fill = greenBrush;
+        }
 
+        private void btnVegan_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            isVegan = !isVegan;
+            if (btnVegan.Fill != redBrush)
+                btnVegan.Fill = redBrush;
+            else
+                btnVegan.Fill = greenBrush;
+        }
+
+        private void btnKosher_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            isKosher= !isKosher;
+            if (btnKosher.Fill != redBrush)
+                btnKosher.Fill = redBrush;
+            else
+                btnKosher.Fill = greenBrush;
         }
     }
 }

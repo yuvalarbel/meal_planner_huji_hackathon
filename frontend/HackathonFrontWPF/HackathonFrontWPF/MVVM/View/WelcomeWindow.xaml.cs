@@ -12,22 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using HackathonFrontWPF.MVVM.Model;
 
-namespace HackathonFrontWPF.MVVM.View
+namespace Hack
 {
     /// <summary>
-    /// Interaction logic for IngredientControl.xaml
+    /// Interaction logic for WelcomeWindow.xaml
     /// </summary>
-    public partial class IngredientControl : UserControl
+    public partial class WelcomeWindow : UserControl
     {
-        public Ingredient ingredient { get; set; }
-        public IngredientControl(Ingredient ing)
+        public MainWindow mainWindow { get; set; }
+        public WelcomeWindow(MainWindow main)
         {
             InitializeComponent();
-            imgBowl.Source = new BitmapImage(new Uri(ing.Image_path));
-            txtName.Text = ing.Name;
-            ingredient= ing;
+            mainWindow = main;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.removeControl(this);
+            mainWindow.loadControl(mainWindow.regControl);
         }
     }
 }
